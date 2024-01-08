@@ -9,7 +9,7 @@ class LevelLoader:
         self.active_level = None
 
         for index, file in enumerate(os.listdir("./levels")):
-            self.buttons.append(Button(310, 50+index*50, file))
+            self.buttons.append(Button(590, 50+index*50, file))
 
     def draw_buttons(self):
         for button in self.buttons:
