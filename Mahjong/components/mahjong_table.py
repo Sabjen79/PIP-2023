@@ -36,7 +36,7 @@ class MTable:
         self.start_y -= height*60/2 + 30
 
         for tile in self.tiles:
-            tile.rect = pygame.Rect(self.start_x + tile.x*44 + tile.z*3, self.start_y + tile.y*60, 44, 60)
+            tile.rect = pygame.Rect(self.start_x + tile.x*44 + tile.z*2, self.start_y + tile.y*60 + tile.z*2, 44, 60)
 
     def draw_tiles(self, screen):
         for tile in self.tiles:
