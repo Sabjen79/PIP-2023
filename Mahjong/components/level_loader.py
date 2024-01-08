@@ -9,17 +9,20 @@ class LevelLoader:
         self.active_level = None
 
         for index, file in enumerate(os.listdir("./levels")):
-            self.buttons.append(Button(590, 50+index*50, file))
+            self.buttons.append(Button(590, 50 + index * 50, file))
+
 
     def draw_buttons(self):
         for button in self.buttons:
             button.draw(self.screen)
+
 
     def check_buttons(self, event):
         for button in self.buttons:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if button.rect.collidepoint(event.pos):
                     self.active_level = self.load_level(button.file)
+
 
     def load_level(self, file):
         tiles = []
@@ -45,6 +48,7 @@ class Button:
     def __init__(self, x, y, file):
         self.rect = pygame.Rect(x, y, 100, 40)
         self.file = file
+
 
     def draw(self, surface):
         pygame.draw.rect(surface, (200, 200, 200), self.rect)
